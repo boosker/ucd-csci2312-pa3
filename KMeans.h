@@ -10,6 +10,7 @@
 #include <fstream>
 
 #include "Cluster.h"
+#include "Exceptions.h"
 
 namespace Clustering {
 

@@ -7,6 +7,7 @@
 #define CLUSTERING_CLUSTER_H
 
 #include "Point.h"
+#include "Exceptions.h"
 
 namespace Clustering {
 
