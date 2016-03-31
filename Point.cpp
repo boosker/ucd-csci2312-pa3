@@ -10,6 +10,7 @@
 #include <algorithm>
 
 #include "Point.h"
+#include "Exceptions.h"
 
 using namespace std;
 
@@ -270,8 +271,8 @@ namespace Clustering {
             try {
                 p.setValue(i, val);
             }
-            catch (Clustering::OutOfBoundsEx e) {
-                std::cout << "In Point extraction operator - " << e << std::endl;
+            catch (Clustering::OutOfBoundsEx ex) {
+                std::cerr << ex << std::endl;
             }
         }
         return in;

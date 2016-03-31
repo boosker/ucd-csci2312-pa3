@@ -7,6 +7,7 @@
 #include <sstream>
 
 #include "Cluster.h"
+#include "Exceptions.h"
 
 using namespace std;
 
@@ -328,7 +329,7 @@ namespace Clustering {
     std::istream &operator>>(istream &in, Cluster &c) {
         std::string line;
 
-        while (std::getline(in, line, '\n')) {
+        while (std::getline(in, line, ',')) {
             Point pt(1);
             std::stringstream lineStr(line);
 
@@ -336,8 +337,8 @@ namespace Clustering {
                 lineStr >> pt;
                 c.add(pt);
             }
-            catch (Clustering::DimensionalityMismatchEx e) {
-                std::cout << "In Cluster extraction operator: " << e << std::endl;
+            catch (DimensionalityMismatchEx ex) {
+                std::cerr << ex << std::endl;
             }
         }
         return in;

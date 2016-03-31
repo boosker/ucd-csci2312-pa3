@@ -2,13 +2,13 @@
 #include <iostream>
 #include <fstream>
 #include "KMeans.h"
+#include "Exceptions.h"
+#include "Cluster.h"
 
 
 using namespace std;
 
 namespace Clustering {
-    static const double SCORE_DIFF_THRESHHOLD = 1;
-
     // Constructor
     KMeans::KMeans(unsigned int dim, unsigned int k, std::string filename, unsigned int maxIter) {
         if (k == 0)
